@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Your real constraints (copy of constraints-and-preferences.example/).
+# Never commit these — they describe you.
+constraints-and-preferences/
+
+# Your roast and PWI outputs (top level only; samples/ stays tracked).
+roasts/*.md
+roasts/*.html
+potential-winner-ideas/*.md
+potential-winner-ideas/*.html
+!roasts/README.md
+!potential-winner-ideas/README.md
+
+# Intentionally tracked, do not ignore:
+#   .cursor/   house rules and skill copies
+#   .claude/   skill index and copies
+#   constraints-and-preferences.example/
+#   roasts/samples/   potential-winner-ideas/samples/

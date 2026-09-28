@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roast · ai-notes-for-dentists</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+:root {
+  --ink: #121512;
+  --muted: #5c635e;
+  --paper: #f3f1ec;
+  --card: #fffcf7;
+  --line: #d8d4cb;
+  --accent: #145C45;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Outfit, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+a { color: var(--accent); font-weight: 700; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+h1 {
+  font-size: clamp(40px, 8vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  word-spacing: 0.16em;
+  line-height: 0.95;
+  margin: 10px 0 12px;
+  text-transform: uppercase;
+}
+.lede {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  max-width: 42rem;
+  margin: 0 0 28px;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 36px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--card);
+}
+.pill.verdict {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+.pill i { width: 14px; height: 14px; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 16px 18px;
+}
+.stat-n {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: var(--accent);
+}
+.block { margin: 0 0 12px; }
+.block summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 16px 18px;
+}
+.block summary::-webkit-details-marker { display: none; }
+.block[open] summary { border-color: var(--accent); }
+.block-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  word-spacing: 0.14em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+.block-title i { width: 20px; height: 20px; color: var(--accent); }
+.block-count {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.block-body { padding: 18px 0 8px; }
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 20px;
+}
+.card h3 {
+  margin: 6px 0 10px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  word-spacing: 0.08em;
+  line-height: 1.15;
+}
+.body, .fields dd p, .prose p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+.body p:last-child, .fields dd p:last-child, .prose p:last-child { margin-bottom: 0; }
+.fields {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0 0;
+}
+.fields dt {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.fields dd { margin: 0; }
+.empty {
+  color: var(--muted);
+  font-weight: 700;
+}
+.go {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.go i { width: 14px; height: 14px; }
+@media (max-width: 720px) {
+  .stats, .cards { grid-template-columns: 1fr; }
+  .block-title { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">Roast and alternatives</p>
+    <h1>ai notes for dentists</h1>
+    <p class="lede">SaaS that turns dentist appointments into chart notes</p>
+    <p class="lede"><strong>Assumed.</strong> English-speaking clinics, $15/mo self-serve</p>
+    <div class="meta">
+      <span class="pill verdict"><i data-lucide="tree-pine"></i>kill</span>
+      <span class="pill">2026-Sep-11</span>
+      <span class="pill">mode both</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">2</div><p class="eyebrow">Kills</p></div>
+      <div class="stat"><div class="stat-n">2</div><p class="eyebrow">Alternatives</p></div>
+      <div class="stat"><div class="stat-n">2</div><p class="eyebrow">Sources</p></div>
+    </div>
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="crosshair"></i>Target</span>
+    <span class="block-count">1</span>
+  </summary>
+  <div class="block-body">
+    <div class="prose card"><p>Sell dentists a $15/month app that writes their chart notes from the appointment. They switch because notes are tedious. Working means enough paying clinics for side income, or a lot more for primary.</p></div>
+  </div>
+</details>
+
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="link"></i>Sources</span>
+    <span class="block-count">2</span>
+  </summary>
+  <div class="block-body">
+    <div class="cards"><article class="card"><p class="eyebrow">source</p><h3>clinics already live inside practice software</h3><div class="body"><p>https://www.ada.org</p></div><a class="go" href="https://www.ada.org" target="_blank" rel="noopener noreferrer"><i data-lucide="arrow-up-right"></i>Open</a></article><article class="card"><p class="eyebrow">unverified</p><h3>$15/mo dental SaaS conversion is “nice to have”</h3></article></div>
+  </div>
+</details>
+
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="flame"></i>Market roast</span>
+    <span class="block-count">2</span>
+  </summary>
+  <div class="block-body">
+    <div class="cards"><article class="card"><p class="eyebrow">envelope</p><h3>Users × price</h3><div class="body"><p>At $15/mo you need about 110–195 paying clinics for $15–25k USD. That is a lot of dentists who already have notes inside their PMS. Primary ($150k) is a fantasy at this price.</p></div></article><article class="card"><p class="eyebrow">capital</p><h3>Before it pays</h3><div class="body"><p>A few hundred in tools. The real spend is the months of selling into clinics before anyone pays.</p></div></article><article class="card"><p class="eyebrow">K1</p><h3>Bundled in the PMS</h3><div class="body"><p>Dentists already get notes inside the software they cannot leave. You are a second window they will not open.</p></div></article><article class="card"><p class="eyebrow">K2</p><h3>Vitamin</h3><div class="body"><p>The pain is real and mild. They cope with templates and a bored associate. Nobody is dying for this. O1 already proved it.</p></div></article></div>
+  </div>
+</details>
+
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="crown"></i>Kings of the hill</span>
+    <span class="block-count">1</span>
+  </summary>
+  <div class="block-body">
+    <div class="cards"><article class="card"><p class="eyebrow">H1</p><h3>Big PMS Inc</h3><dl class="fields"><div><dt>What they do</dt><dd><p>practice software with chart notes bundled in</p></dd></div><div><dt>Moat</dt><dd><p>they own the default; see K1</p></dd></div><div><dt>Lesson</dt><dd><p>you are a second window they will not open</p></dd></div></dl></article></div>
+  </div>
+</details>
+
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="skull"></i>Obituaries: Respect for the Fallen</span>
+    <span class="block-count">1</span>
+  </summary>
+  <div class="block-body">
+    <div class="cards"><article class="card"><p class="eyebrow">O1</p><h3>DeadNotes</h3><dl class="fields"><div><dt>What they did</dt><dd><p>standalone AI chart notes for dentists</p></dd></div><div><dt>Status</dt><dd><p>dead</p></dd></div><div><dt>Cause of death</dt><dd><p>unverified: shutdown post rumored, site dead</p></dd></div><div><dt>Lesson</dt><dd><p>standalone notes already died once; bundling won</p></dd></div></dl></article></div>
+  </div>
+</details>
+
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="sliders-horizontal"></i>Constraints overlay</span>
+    <span class="block-count">3</span>
+  </summary>
+  <div class="block-body">
+    <div class="cards"><article class="card"><p class="eyebrow">constraint</p><h3>location.md</h3><div class="body"><p>Irrelevant if you sell English-first and remote. Do not twist this into on-site clinic software.</p></div></article><article class="card"><p class="eyebrow">constraint</p><h3>time-and-income.md</h3><div class="body"><p>Side income is a stretch. Primary is a joke. Selling into clinics is not “low ongoing effort.”</p></div></article><article class="card"><p class="eyebrow">constraint</p><h3>skills.md</h3><div class="body"><p>You can build it in a weekend. That is the trap.</p></div></article></div>
+  </div>
+</details>
+
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="sprout"></i>Alternatives</span>
+    <span class="block-count">2</span>
+  </summary>
+  <div class="block-body">
+    <div class="cards"><article class="card"><p class="eyebrow">A1</p><h3>Weekly notes retainer</h3><dl class="fields"><div><dt>Change</dt><dd><p>stop selling software; clean last week’s notes by hand for English-speaking clinic managers, billed as a retainer</p></dd></div><div><dt>Why it might live</dt><dd><p>they already pay humans for admin; a retainer is a known object</p></dd></div><div><dt>How it still dies</dt><dd><p>it becomes a tiny agency and eats evenings</p></dd></div><div><dt>Mode</dt><dd><p>side</p></dd></div><div><dt>Fit</dt><dd><p>skills.md; languages.md; scale.md</p></dd></div><div><dt>Cheap test</dt><dd><p>this week message 15 clinic managers (not friends); offer to clean last week’s notes for $150 by Friday; kill if fewer than 2 pay; likes do not count</p></dd></div></dl></article><article class="card"><p class="eyebrow">A2</p><h3>Notes API for PMS builders</h3><dl class="fields"><div><dt>Change</dt><dd><p>sell a capture-and-return API to people building clinic tools, not to dentists</p></dd></div><div><dt>Why it might live</dt><dd><p>fewer buyers, higher price, your builder skills actually matter</p></dd></div><div><dt>How it still dies</dt><dd><p>sales cycle; you still have to find those builders</p></dd></div><div><dt>Mode</dt><dd><p>primary</p></dd></div><div><dt>Fit</dt><dd><p>skills.md; scale.md</p></dd></div><div><dt>Cheap test</dt><dd><p>list a $500 setup + monthly on a forum those builders actually read; kill if zero paid conversations in 7 days</p></dd></div></dl></article></div>
+  </div>
+</details>
+
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="gavel"></i>Verdict</span>
+    <span class="block-count">kill</span>
+  </summary>
+  <div class="block-body">
+    <div class="cards"><article class="card"><p class="eyebrow">Main</p><h3>kill</h3></article><article class="card"><p class="eyebrow">Side</p><h3>only as A1, and only after the cheap test pays</h3></article><article class="card"><p class="eyebrow">Primary</p><h3>do not do this</h3></article></div>
+  </div>
+</details>
+
+  </main>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PWI · talent-wave-newsletter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+:root {
+  --ink: #121512;
+  --muted: #5c635e;
+  --paper: #f3f1ec;
+  --card: #fffcf7;
+  --line: #d8d4cb;
+  --accent: #8A5A00;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Outfit, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+a { color: var(--accent); font-weight: 700; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+h1 {
+  font-size: clamp(40px, 8vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  word-spacing: 0.16em;
+  line-height: 0.95;
+  margin: 10px 0 12px;
+  text-transform: uppercase;
+}
+.lede {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  max-width: 42rem;
+  margin: 0 0 28px;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 36px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--card);
+}
+.pill.status {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+.pill i { width: 14px; height: 14px; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 16px 18px;
+}
+.stat-n {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: var(--accent);
+}
+.block { margin: 0 0 12px; }
+.block summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 16px 18px;
+}
+.block summary::-webkit-details-marker { display: none; }
+.block[open] summary { border-color: var(--accent); }
+.block-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  word-spacing: 0.14em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+.block-title i { width: 20px; height: 20px; color: var(--accent); }
+.block-count {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.block-body { padding: 18px 0 8px; }
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 20px;
+}
+.card h3 {
+  margin: 6px 0 10px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  word-spacing: 0.08em;
+  line-height: 1.15;
+}
+.body, .prose p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+.body p:last-child, .prose p:last-child { margin-bottom: 0; }
+.loglist {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.empty {
+  color: var(--muted);
+  font-weight: 700;
+}
+.go {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.go i { width: 14px; height: 14px; }
+@media (max-width: 720px) {
+  .stats, .cards { grid-template-columns: 1fr; }
+  .block-title { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">Potential winner idea</p>
+    <h1>talent wave newsletter</h1>
+    <p class="lede">Talent-wave newsletter monetized by university employers</p>
+    <div class="meta">
+      <span class="pill status"><i data-lucide="trophy"></i>parked</span>
+      <span class="pill">2026-Sep-13</span>
+      <span class="pill">new spark</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">6/6</div><p class="eyebrow">Canvas filled</p></div>
+      <div class="stat"><div class="stat-n">6</div><p class="eyebrow">Sources</p></div>
+      <div class="stat"><div class="stat-n">1</div><p class="eyebrow">Log entries</p></div>
+    </div>
+    
+<details class="block" open>
+  <summary>
+    <span class="block-title"><i data-lucide="bookmark"></i>Why kept</span>
+    <span class="block-count">1</span>
+  </summary>
+  <div class="block-body">
+    <div class="prose card"><p>Sample file shipped with the repo — shows what a promoted keeper looks like.</p></div>
+  </div>
+</details>
+
+    
+<details class="block" open>
+  <summary>
+    <span class="block-title"><i data-lucide="layout-grid"></i>Canvas</span>
+    <span class="block-count">6/6</span>
+  </summary>
+  <div class="block-body">
+    <div class="cards"><article class="card"><p class="eyebrow">buyer</p><div class="body"><p>Canadian/EU university HR and recruitment offices paying for featured posts in front of US researchers eyeing the exit. Employers are the only proven payer in this space: Nature Careers charges $799–$1,145 per job ad, the Chronicle of Higher Education charges $219/60 days online, and universities run standing recruitment-ad budgets with growing paid-advertising teams.</p></div></article><article class="card"><p class="eyebrow">pain</p><div class="body"><p>Obscure-but-funded programs (Impact+ chairs, Choose Europe calls, Safe Place-style intakes) need qualified US applicants and are currently discoverable only via scattered university postings. A warm, niche audience of exit-minded researchers is exactly who they want to reach.</p></div></article><article class="card"><p class="eyebrow">channel</p><div class="body"><p>Free biweekly newsletter (Substack/beehiiv) tracking talent-program money and chair openings, seeded via posts in researcher communities and amplified by the hot news peg. Academic newsletter sponsorship is an established format (e.g. AAUP Academe sells newsletter sidebar ads). Audience-from-zero is the open question the test is designed to answer.</p></div></article><article class="card"><p class="eyebrow">money</p><div class="body"><p>Featured posts at $300 (test price; Nature-anchored upside toward $800). Side bar is ~$15–25k USD net (~$20–35K gross): at $300 that is ~65–115 posts/yr (~1–2 per week) — a real employer-sales treadmill for side hours; at $800 it drops to ~25–45/yr (~2–4 per month). No subscription upkeep, but revenue is lumpy and news-cycle dependent. Mode: side. Primary bar (~$150k net, ~$200K+ gross) would need ~250+ posts/yr at $800 — a sales team, not a side project.</p></div></article><article class="card"><p class="eyebrow">edge</p><div class="body"><p>Speed and focus: a solo operator can ship the first 4 issues in 2 weeks while university comms teams plan quarterly. No incumbent owns the &quot;US exit → Canada/EU programs&quot; niche beat; Nature covers it as news, not as a classifieds channel.</p></div></article><article class="card"><p class="eyebrow">test</p><div class="body"><p>Publish 4 manual issues over 2 weeks to a free list, then pitch paid featured posts ($300) to 10 Canadian/EU university HR departments. Kill if zero pay. Subscriber count without a paying employer does not count.</p></div></article></div>
+  </div>
+</details>
+
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="link"></i>Sources</span>
+    <span class="block-count">6</span>
+  </summary>
+  <div class="block-body">
+    <div class="cards"><article class="card"><p class="eyebrow">source</p><h3>Nature Careers employer ads $799–$1,145</h3><div class="body"><p>https://www.nature.com/naturecareers/article/the-ins-and-outs-of-advertising-scientific-roles-on-our-jobs-board?filter=1&amp;filteredBy=term</p></div><a class="go" href="https://www.nature.com/naturecareers/article/the-ins-and-outs-of-advertising-scientific-roles-on-our-jobs-board?filter=1&amp;filteredBy=term" target="_blank" rel="noopener noreferrer"><i data-lucide="arrow-up-right"></i>Open</a></article><article class="card"><p class="eyebrow">source</p><h3>Chronicle of Higher Ed online $219/60 days; universities routinely buy niche academic placements</h3><div class="body"><p>http://kutztown.edu/Departments-Offices/M-R/Provost/Documents/forms/Faculty%20Advertising%20Guide.pdf</p></div><a class="go" href="http://kutztown.edu/Departments-Offices/M-R/Provost/Documents/forms/Faculty%20Advertising%20Guide.pdf" target="_blank" rel="noopener noreferrer"><i data-lucide="arrow-up-right"></i>Open</a></article><article class="card"><p class="eyebrow">source</p><h3>academic newsletter sidebar sponsorships are an established format</h3><div class="body"><p>https://www.aaup.org/sites/default/files/2024-Academe-Rate-Card.pdf</p></div><a class="go" href="https://www.aaup.org/sites/default/files/2024-Academe-Rate-Card.pdf" target="_blank" rel="noopener noreferrer"><i data-lucide="arrow-up-right"></i>Open</a></article><article class="card"><p class="eyebrow">source</p><h3>universities have marketing teams and growing paid-ad budgets</h3><div class="body"><p>https://www.timeshighereducation.com/cn/node/63484</p></div><a class="go" href="https://www.timeshighereducation.com/cn/node/63484" target="_blank" rel="noopener noreferrer"><i data-lucide="arrow-up-right"></i>Open</a></article><article class="card"><p class="eyebrow">unverified</p><h3>that a from-zero newsletter can build a researcher audience worth $300/post (test checks exactly this)</h3></article><article class="card"><p class="eyebrow">unverified</p><h3>university willingness to buy from an unknown solo sender vs annual-brand contracts</h3></article></div>
+  </div>
+</details>
+
+    
+<details class="block">
+  <summary>
+    <span class="block-title"><i data-lucide="history"></i>Log</span>
+    <span class="block-count">1</span>
+  </summary>
+  <div class="block-body">
+    <div class="prose card"><ul class="loglist"><li>2026-09-13: sample file shipped with the repo</li></ul></div>
+  </div>
+</details>
+
+  </main>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
